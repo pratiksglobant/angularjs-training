@@ -1,0 +1,35 @@
+{
+	"records" : [
+				{
+					"category" : "salary",
+  					"payer" : "Pratik",
+  					"amount" : 200000,
+  					"description" : "Amount Paid Through Slary"
+				},
+				{
+					"category" : "salary",
+  					"payer" : "Pratik",
+  					"amount" : "200000",
+  					"description" : "Amount Paid Through Slary"
+				},
+				{
+					"category" : "salary",
+  					"payer" : "Pratik",
+  					"amount" : "200000",
+  					"description" : "Amount Paid Through Slary"
+				},
+				{
+					"category" : "salary",
+  					"payer" : "Pratik",
+  					"amount" : "200000",
+  					"description" : "Amount Paid Through Slary"
+				},
+				{
+					"category" : "salary",
+  					"payer" : "Pratik",
+  					"amount" : "200000",
+  					"description" : "Amount Paid Through Slary"
+				}
+	]
+
+}

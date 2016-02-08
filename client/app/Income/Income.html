@@ -1,0 +1,63 @@
+<navbar></navbar>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+  </div>
+</header>
+
+<h2>Add Income</h2>
+<div ng-controller="IncomeCtrl" class = "container">
+<div class="form">
+	<form class="income_form" name="addIncome">
+	<label for="exampleInputEmail1">Income_Id</label>
+	<input class="form-control income_id" type="number" id="exampleInputEmail1" name ="id" ng-model="income.id"></input>
+    <label>Category</label>
+    <select class="form-control income_category" ng-model="income.category">
+    	<option value="salary">Salary</option>
+		<option value="business">Business</option>
+		<option value="interest">Interest on Deposit</option>
+    </select>
+    <label for="exampleInputEmail1">Payer:</label>
+    <input class="form-control income_payer" name = "payer" ng-model="income.payer"></input>
+    <span style="color:red" ng-show="addIncome.payer.$touched && addIncome.payer.$invalid">{{addIncome.payer.$invalid}}The name is required and should be min 3 char.</span>
+    <label>Amount:</label>    
+    <input class="form-control income_amount" type="number" ng-model="income.amount"></input>
+    <label>Mode Of Payment</label>
+    	<input class="form-control income_mode" type="text" ng-model="income.modeOfPay"></input>
+	<label>Date</label>   
+		<input placeholder = "dd-mm-yyyy" class="form-control date-picker ng-pristine" type="text" ng-model="income.date"/>
+    <label>Description:</label>
+    <textarea rows="4" cols="5" class="form-control income_desc" type="text" ng-model="income.description"></textarea>
+    <button class="btn" ng-click="fnaddIncome();">Submit</button>
+</form>
+</div>
+<div ng-show="showIncomeTable" class="dataTable">
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Income_Id</th>
+				<th>Income Category</th>
+				<th>Income Payer</th>
+				<th>Income Amount</th>
+				<th>Mode Of Payment</th>
+				<th>Date</th>
+				<th>Income Description</th>
+			</tr>
+		</thead>
+	<tr ng-repeat="data in income.incomeData">
+		<td>{{data.id}}</td>
+		<td>{{data.cat}}</td>
+		<td>{{data.pay}}</td>
+		<td>{{data.amt}}</td>
+		<td>{{data.modeofpay}}</td>
+		<td>{{data.date}}</td>
+		<td>{{data.desc}}</td>
+		<td>
+			<button ng-click="deleteIncome($index)">Delete</button>
+        </td>
+	</tr>
+</table>
+
+</div>
+</div>
+<footer></footer>

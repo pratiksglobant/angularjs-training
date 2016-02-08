@@ -1,0 +1,27 @@
+<navbar></navbar>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+  </div>
+</header>
+
+<div class="container">
+  <table class="table table-striped table-bordered mtop">
+                <thead>
+                    <tr>
+                        <th>Total Income</th>
+                        <th>Total Expense</th>
+                        <th>Total Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> {{sumOfIncome|number}}</td>
+                        <td> {{sumOfExpense|number}}</td>
+                        <td>{{sumOfIncome - sumOfExpense|currency}} </td>
+                    </tr>
+                </tbody>
+            </table>
+</div>
+
+<footer></footer>

@@ -1,0 +1,24 @@
+<navbar></navbar>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+  </div>
+</header>
+
+<h2>Add Expense</h2>
+<form class="expence_form" name="addForm" novalidate >
+    <label>Category</label>
+    <select class="form-control category" ng-model="expense.category">
+    	<option value="salary">Salary</option>
+		<option value="business">Business</option>
+		<option value="interest">Interest on Deposit</option>
+    </select>
+    <label>Amount:</label>
+    <input class="form-control expense_amount" type="number" ng-model="expense.amount"></input>
+    <label>Description:</label>
+    <textarea rows="4" cols="5" class="form-control expense_desc" type="text" ng-model="expense.description"></textarea >
+    <button class="btn" ng-click="submit()">Submit</button>
+</form>
+
+
+<footer></footer>
