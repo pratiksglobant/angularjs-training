@@ -5,12 +5,10 @@
   </div>
 </header>
 
-<h2>Add Income</h2>
-<div ng-controller="IncomeCtrl" class = "container">
-<div class="form">
-	<form class="income_form" name="addIncome">
-	<label for="exampleInputEmail1">Income_Id</label>
-	<input class="form-control income_id" type="number" id="exampleInputEmail1" name ="id" ng-model="income.id"></input>
+<div class = "container">
+	<h2>Add Income</h2>
+<div class="form col-sm-3">
+	<form class="income_form" name="addIncome">	
     <label>Category</label>
     <select class="form-control income_category" ng-model="income.category">
     	<option value="salary">Salary</option>
@@ -31,7 +29,8 @@
     <button class="btn" ng-click="fnaddIncome();">Submit</button>
 </form>
 </div>
-<div ng-show="showIncomeTable" class="dataTable">
+<div class="dataTable col-sm-9">
+	<h2>Income Details</h2>
 	<table class="table table-bordered">
 		<thead>
 			<tr>
@@ -42,6 +41,7 @@
 				<th>Mode Of Payment</th>
 				<th>Date</th>
 				<th>Income Description</th>
+				<th></th>
 			</tr>
 		</thead>
 	<tr ng-repeat="data in income.incomeData">
@@ -53,7 +53,10 @@
 		<td>{{data.date}}</td>
 		<td>{{data.desc}}</td>
 		<td>
-			<button ng-click="deleteIncome($index)">Delete</button>
+            <a href="" ng-click="" title="Edit"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+            |
+            <a href="" ng-click="deleteIncome($index);" title="Delete"><span
+                    class="glyphicon glyphicon-trash"></span>Delete</a>
         </td>
 	</tr>
 </table>

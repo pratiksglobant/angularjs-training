@@ -1,0 +1,31 @@
+{
+	"income_data": [
+		{
+			"id" : 1,
+			"cat" : "Salary",
+			"pay" : "Kamat",
+			"amt" : 2000,
+			"desc" : "Paid 2000 for rent to Mr. XYZ",
+			"modeofpay" : "Cash",
+			"date" : "01-02-2016"
+		},
+		{
+			"id" : 2,
+			"cat" : "Business",
+			"pay" : "Post91",
+			"amt" : 2000,
+			"desc" : "Paid 2000 for food to Post91",
+			"modeofpay" : "credit_card",
+			"date" : "12-02-2016"
+		},
+		{
+			"id" : 3,
+			"cat" : "interest on Deposit",
+			"pay" : "Wits",
+			"amt" : 2000,
+			"desc" : "Paid 2000 fro rent to Wits",
+			"modeofpay" : "Cash",
+			"date" : "20-02-2016"
+		}
+	]
+}

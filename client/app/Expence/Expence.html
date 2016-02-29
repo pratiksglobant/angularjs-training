@@ -5,20 +5,71 @@
   </div>
 </header>
 
-<h2>Add Expense</h2>
-<form class="expence_form" name="addForm" novalidate >
-    <label>Category</label>
-    <select class="form-control category" ng-model="expense.category">
-    	<option value="salary">Salary</option>
-		<option value="business">Business</option>
-		<option value="interest">Interest on Deposit</option>
-    </select>
-    <label>Amount:</label>
-    <input class="form-control expense_amount" type="number" ng-model="expense.amount"></input>
-    <label>Description:</label>
-    <textarea rows="4" cols="5" class="form-control expense_desc" type="text" ng-model="expense.description"></textarea >
-    <button class="btn" ng-click="submit()">Submit</button>
-</form>
 
+<div class = "container">
+    <h2>Add Expense</h2>
+    <div class = "form col-sm-3">
+        <form class="expence_form" name="addForm" novalidate >
+            <!-- <input class="form-control expence_id" type="number" name ="id" ng-model="expence.expence_id"></input> -->
+            <label>Category</label>
+            <select class="form-control category" ng-model="expence.category">
+            	 <option value="rent">Rent</option>
+                <option value="food">Food</option>
+                <option value="party">Party</option>
+                <option value="emi">EMI</option>
+            </select>
+             <label>Payer:</label>
+            <input class="form-control expence_payer" name = "payer" ng-model="expence.payer"></input>
+            <label>Amount:</label>
+            <input class="form-control expense_amount" type="number" ng-model="expence.amount"></input>
+             <label>Mode Of Payment:</label>
+              <select class="form-control category" ng-model="expence.modeOfPay">
+                <option value="Cash">Cash</option>
+                <option value="credit_card">Credit Card</option>
+                <option value="electronic_transfer">electronic transfer</option>
+                <option value="Debit_ Card">Debit Card</option>
+            </select>              
+            <label>Date</label>   
+                <input placeholder = "dd-mm-yyyy" class="form-control date-picker ng-pristine" type="text" ng-model="expence.date"/>
+            <label>Description:</label>
+            <textarea rows="4" cols="5" class="form-control expense_desc" type="text" ng-model="expence.description"></textarea >
+            <button class="btn" ng-click="fnaddExpence()">Submit</button>
+        </form>
+    </div>
+
+<div class="dataTable col-sm-9">
+    <h2>Expence Details</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Ecpence_Id</th>
+                <th>Ecpence Category</th>
+                <th>Ecpence Payer</th>
+                <th>Ecpence Amount</th>
+                <th>Mode Of Payment</th>
+                <th>Date</th>
+                <th>Ecpence Description</th>
+                <th></th>
+            </tr>
+        </thead>
+    <tr ng-repeat="data in expence.expenceData">
+        <td>{{data.id}}</td>
+        <td>{{data.cat}}</td>
+        <td>{{data.pay}}</td>
+        <td>{{data.amt}}</td>
+        <td>{{data.modeofpay}}</td>
+        <td>{{data.date}}</td>
+        <td>{{data.desc}}</td>
+        <td>
+            <a href="" ng-click="" title="Edit"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+            |
+            <a href="" ng-click="deleteExpence($index);" title="Delete"><span
+                    class="glyphicon glyphicon-trash"></span>Delete</a>
+        </td>
+    </tr>
+</table>
+
+</div>
+</div>
 
 <footer></footer>
